@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-showAppModal(
+showAppModalAbelliz(
   BuildContext context, {
   required Widget child,
   double heightFactor = 0.9,

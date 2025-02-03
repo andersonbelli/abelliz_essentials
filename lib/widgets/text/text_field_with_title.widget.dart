@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../constants/colors.constants.dart';
 
-class TextFieldWithTitle extends StatelessWidget {
-  const TextFieldWithTitle({
+class TextFieldWithTitleAbelliz extends StatelessWidget {
+  const TextFieldWithTitleAbelliz({
     super.key,
     required this.hintText,
     required this.controller,
@@ -13,6 +14,7 @@ class TextFieldWithTitle extends StatelessWidget {
     this.errorText = '',
     this.keyboardType = TextInputType.text,
     this.obscureText = false,
+    this.inputFormatters,
   });
 
   final int maxLength;
@@ -23,6 +25,7 @@ class TextFieldWithTitle extends StatelessWidget {
   final bool obscureText;
   final TextEditingController controller;
   final Function(String) onChanged;
+  final List<TextInputFormatter>? inputFormatters;
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +34,7 @@ class TextFieldWithTitle extends StatelessWidget {
       cursorErrorColor: Theme.of(context).colorScheme.outline,
       maxLength: maxLength,
       obscureText: obscureText,
+      inputFormatters: inputFormatters,
       decoration: InputDecoration(
         counterText: '',
         hintText: hintText,

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../constants/padding.constants.dart';
 import '../typedefs/error_messages.typedef.dart';
 
-class ErrorMessagesContainer extends StatelessWidget {
-  const ErrorMessagesContainer({
+class ErrorMessagesContainerAbelliz extends StatelessWidget {
+  const ErrorMessagesContainerAbelliz({
     super.key,
     required this.isVisible,
     required this.errorMessagesList,

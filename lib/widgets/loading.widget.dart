@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../constants/colors.constants.dart';
 
-Widget loadingWidget(
+Widget loadingWidgetAbelliz(
   bool isLoading, {
   Color? containerColor,
   Color? spinnerColor,

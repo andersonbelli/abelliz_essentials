@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../constants/colors.constants.dart';
 
-class AppCloseButton extends StatelessWidget {
-  const AppCloseButton({
+class AppCloseButtonAbelliz extends StatelessWidget {
+  const AppCloseButtonAbelliz({
     super.key,
     required this.action,
   });

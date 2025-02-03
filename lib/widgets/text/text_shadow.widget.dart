@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../constants/colors.constants.dart';
 import '../../constants/text_sizes.constants.dart';
 
-class TextShadow extends StatelessWidget {
-  const TextShadow({
+class TextShadowAbelliz extends StatelessWidget {
+  const TextShadowAbelliz({
     super.key,
     required this.text,
     this.color = AppColors.GREEN,

@@ -2,15 +2,14 @@ import 'package:flutter/material.dart';
 
 import 'default_appbar_child.widget.dart';
 
-class DefaultScaffold extends StatelessWidget {
-  const DefaultScaffold({
+class DefaultScaffoldAbelliz extends StatelessWidget {
+  const DefaultScaffoldAbelliz({
     super.key,
     required this.child,
     this.appBarText,
     this.customAppBar,
   }) : assert(
-          (appBarText != null && customAppBar == null) ||
-              (appBarText == null && customAppBar != null),
+          (appBarText != null && customAppBar == null) || (appBarText == null && customAppBar != null),
           'Either [appBarText] or [customAppBar] must be provided.',
         );
 
@@ -23,7 +22,7 @@ class DefaultScaffold extends StatelessWidget {
     return Scaffold(
       appBar: appBarText != null
           ? AppBar(
-              title: DefaultAppBarChild(
+              title: DefaultAppBarChildAbelliz(
                 Text(appBarText!),
               ),
             )

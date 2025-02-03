@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../constants/colors.constants.dart';
 
-class TextUnderline extends StatelessWidget {
-  const TextUnderline(this.text, {super.key, this.textSize = 18});
+class TextUnderlineAbelliz extends StatelessWidget {
+  const TextUnderlineAbelliz(this.text, {super.key, this.textSize = 18});
 
   final String text;
   final double textSize;

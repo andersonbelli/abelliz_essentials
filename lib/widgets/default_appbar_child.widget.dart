@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../constants/padding.constants.dart';
 
-class DefaultAppBarChild extends StatelessWidget {
-  const DefaultAppBarChild(
+class DefaultAppBarChildAbelliz extends StatelessWidget {
+  const DefaultAppBarChildAbelliz(
     this.child, {
     super.key,
   });
