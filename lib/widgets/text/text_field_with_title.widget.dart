@@ -8,7 +8,7 @@ class TextFieldWithTitleAbelliz extends StatelessWidget {
     super.key,
     required this.hintText,
     required this.controller,
-    required this.onChanged,
+    this.onChanged,
     this.maxLength = 120,
     this.hasError = false,
     this.errorText = '',
@@ -24,7 +24,7 @@ class TextFieldWithTitleAbelliz extends StatelessWidget {
   final TextInputType keyboardType;
   final bool obscureText;
   final TextEditingController controller;
-  final Function(String) onChanged;
+  final Function(String)? onChanged;
   final List<TextInputFormatter>? inputFormatters;
 
   @override

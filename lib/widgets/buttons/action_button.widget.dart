@@ -4,8 +4,8 @@ import '../../constants/colors.constants.dart';
 import '../../constants/padding.constants.dart';
 import '../../constants/text_sizes.constants.dart';
 
-class AppActionButtonAbelliz extends StatelessWidget {
-  const AppActionButtonAbelliz({
+class ActionButtonAbelliz extends StatelessWidget {
+  const ActionButtonAbelliz({
     super.key,
     required this.text,
     required this.onPressed,
