@@ -8,7 +8,7 @@ class AppActionButton extends StatelessWidget {
   const AppActionButton({
     super.key,
     required this.text,
-    required this.onTap,
+    required this.onPressed,
     this.isDisabled = false,
     this.width,
     this.margin,
@@ -18,7 +18,7 @@ class AppActionButton extends StatelessWidget {
   });
 
   final String text;
-  final VoidCallback onTap;
+  final VoidCallback onPressed;
   final bool isDisabled;
   final double? width;
   final EdgeInsets? margin;
@@ -39,7 +39,7 @@ class AppActionButton extends StatelessWidget {
       ),
       width: width ?? MediaQuery.of(context).size.width,
       child: ElevatedButton(
-        onPressed: isDisabled ? null : onTap,
+        onPressed: isDisabled ? null : onPressed,
         style: ElevatedButton.styleFrom(
           backgroundColor: backgroundColor,
           shape: RoundedRectangleBorder(
