@@ -8,14 +8,6 @@ void showMessageDialogAbelliz(
   Widget? buttonTextWidget,
   VoidCallback? buttonAction,
 }) {
-  assert(
-    (actionButtons == null && buttonAction != null) ||
-        (actionButtons == null && buttonTextWidget != null) ||
-        (actionButtons != null && buttonAction == null && buttonTextWidget == null),
-    'If [actionButtons] is provided, both [buttonAction] and [buttonTextWidget] must be null. '
-    'Otherwise, [buttonAction] must be provided (buttonTextWidget can be optional).',
-  );
-
   showDialog(
     context: context,
     builder: (ctx) => AlertDialog(
