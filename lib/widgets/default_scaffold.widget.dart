@@ -8,6 +8,7 @@ class DefaultScaffoldAbelliz extends StatelessWidget {
     required this.child,
     this.appBarText,
     this.customAppBar,
+    this.isTransparent = true,
   }) : assert(
           (appBarText != null && customAppBar == null) || (appBarText == null && customAppBar != null),
           'Either [appBarText] or [customAppBar] must be provided.',
@@ -15,6 +16,9 @@ class DefaultScaffoldAbelliz extends StatelessWidget {
 
   final String? appBarText;
   final AppBar? customAppBar;
+
+  /// Only takes effect if [customAppBar] is null
+  final bool isTransparent;
   final Widget child;
 
   @override
@@ -22,9 +26,10 @@ class DefaultScaffoldAbelliz extends StatelessWidget {
     return Scaffold(
       appBar: appBarText != null
           ? AppBar(
-              title: DefaultAppBarChildAbelliz(
+              title: DefaultAppBarTitleAbelliz(
                 Text(appBarText!),
               ),
+              forceMaterialTransparency: isTransparent,
             )
           : customAppBar,
       body: child,
