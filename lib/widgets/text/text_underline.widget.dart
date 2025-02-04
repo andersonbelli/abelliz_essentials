@@ -3,10 +3,20 @@ import 'package:flutter/material.dart';
 import '../../constants/colors.constants.dart';
 
 class TextUnderlineAbelliz extends StatelessWidget {
-  const TextUnderlineAbelliz(this.text, {super.key, this.textSize = 18});
+  const TextUnderlineAbelliz(
+    this.text, {
+    super.key,
+    this.fontWeight = FontWeight.bold,
+    this.textSize = 18,
+    this.underlineColor = AppColors.GREEN,
+    this.underlineThickness = 4.0,
+  });
 
   final String text;
+  final FontWeight fontWeight;
   final double textSize;
+  final Color underlineColor;
+  final double underlineThickness;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +25,7 @@ class TextUnderlineAbelliz extends StatelessWidget {
       style: TextStyle(
         height: 2,
         fontSize: textSize,
-        fontWeight: FontWeight.bold,
+        fontWeight: fontWeight,
         shadows: [
           Shadow(
             offset: const Offset(0, -10),
@@ -24,8 +34,8 @@ class TextUnderlineAbelliz extends StatelessWidget {
         ],
         color: Colors.transparent,
         decoration: TextDecoration.underline,
-        decorationColor: AppColors.GREEN,
-        decorationThickness: 4,
+        decorationColor: underlineColor,
+        decorationThickness: underlineThickness,
         decorationStyle: TextDecorationStyle.wavy,
       ),
     );
