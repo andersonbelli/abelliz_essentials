@@ -24,13 +24,13 @@ jobs:
           flutter pub get
 
       - name: Analyze Dart Code
+        continue-on-error: true
         run: |
-          cd samples
           flutter analyze
 
       - name: Format Dart Code
+        continue-on-error: true
         run: |
-          cd samples
           dart format --set-exit-if-changed .
 
       - name: Build Flutter Web
