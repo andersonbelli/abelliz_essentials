@@ -7,16 +7,20 @@ import '../constants/padding.constants.dart';
 class DashedDividerAbelliz extends StatelessWidget {
   const DashedDividerAbelliz({
     super.key,
+    this.width = double.infinity,
     this.height = 0.5,
-    this.padding = AppPadding.kSize8,
+    this.margin = const EdgeInsets.symmetric(
+      vertical: AppPadding.kSize16,
+    ),
     this.dashLength = 10,
     this.borderWidth = 1,
     this.borderColor = AppColors.DARK_LIGHT,
     this.child = const SizedBox.shrink(),
   });
 
+  final double width;
   final double height;
-  final double padding;
+  final EdgeInsets margin;
   final double dashLength;
   final Color borderColor;
   final double borderWidth;
@@ -25,10 +29,9 @@ class DashedDividerAbelliz extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: width,
       height: child == const SizedBox.shrink() ? height : null,
-      margin: const EdgeInsets.symmetric(
-        horizontal: AppPadding.kSize8,
-      ),
+      margin: margin,
       decoration: BoxDecoration(
         border: DashedBorder.fromBorderSide(
           dashLength: dashLength,

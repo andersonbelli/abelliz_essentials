@@ -11,7 +11,7 @@ class ErrorMessagesContainerAbelliz extends StatelessWidget {
   });
 
   final bool isVisible;
-  final ErrorMessagesMap<Enum> errorMessagesList;
+  final ErrorMessagesMap errorMessagesList;
 
   @override
   Widget build(BuildContext context) {
