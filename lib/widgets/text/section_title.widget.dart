@@ -7,14 +7,14 @@ class SectionTitleAbelliz extends StatelessWidget {
     this.title, {
     super.key,
     this.fontSize = AppTextSize.kMedium,
-    this.color = AppColors.DARK,
+    this.color,
     this.fontWeight = FontWeight.w300,
     this.fontStyle = FontStyle.italic,
   });
 
   final String title;
   final double fontSize;
-  final Color color;
+  final Color? color;
   final FontWeight fontWeight;
   final FontStyle fontStyle;
 

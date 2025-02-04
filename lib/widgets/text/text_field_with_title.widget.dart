@@ -12,7 +12,7 @@ class TextFieldWithTitleAbelliz extends StatelessWidget {
     this.titleText = '',
     this.titleTextSize = AppTextSize.kMedium,
     this.titleTextWeight = FontWeight.w300,
-    this.titleTextColor = AppColors.DARK_LIGHT,
+    this.titleTextColor,
     this.hintText = '',
     this.onChanged,
     this.maxLength = 120,
@@ -27,7 +27,7 @@ class TextFieldWithTitleAbelliz extends StatelessWidget {
   final String titleText;
   final double titleTextSize;
   final FontWeight titleTextWeight;
-  final Color titleTextColor;
+  final Color? titleTextColor;
   final String hintText;
   final int maxLength;
   final bool hasError;

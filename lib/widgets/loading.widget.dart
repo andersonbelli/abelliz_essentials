@@ -14,10 +14,7 @@ Widget loadingWidgetAbelliz(
             height: double.infinity,
             decoration: BoxDecoration(
               color: containerColor ?? AppColors.CREAM.withValues(alpha: .7),
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(30),
-                topRight: Radius.circular(30),
-              ),
+              borderRadius: const BorderRadius.all(Radius.circular(30)),
             ),
             child: Center(
               child: CircularProgressIndicator(
