@@ -16,12 +16,22 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: 'stable'
+          flutter-version: '3.27.2'
 
       - name: Install Dependencies
         run: |
           cd samples
           flutter pub get
+
+      - name: Analyze Dart Code
+        run: |
+          cd samples
+          flutter analyze
+
+      - name: Format Dart Code
+        run: |
+          cd samples
+          dart format --set-exit-if-changed .
 
       - name: Build Flutter Web
         run: |
