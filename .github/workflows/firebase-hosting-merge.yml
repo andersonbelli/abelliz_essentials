@@ -38,12 +38,8 @@ jobs:
           cd samples
           flutter build web --release
 
-  deploy_to_firebase:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: npm ci && npm run build
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: Deploy to Firebase
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           folder: samples/build/web
           repoToken: ${{ secrets.GITHUB_TOKEN }}
