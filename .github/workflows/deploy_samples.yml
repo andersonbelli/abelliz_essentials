@@ -3,7 +3,8 @@ name: Deploy "Samples" Flutter Web to GitHub Pages
 on:
   push:
     branches:
-      - master
+      #- master
+      - dev
 
 jobs:
   build:
@@ -16,7 +17,7 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.27.2'
+          flutter-version: "3.27.2"
 
       - name: Install Dependencies
         run: |
@@ -38,8 +39,8 @@ jobs:
           cd samples
           flutter build web --release
 
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: samples/build/web
+      # - name: Deploy to GitHub Pages
+      #   uses: JamesIves/github-pages-deploy-action@v4
+      #   with:
+      #     branch: gh-pages
+      #     folder: samples/build/web
