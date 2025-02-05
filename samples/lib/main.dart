@@ -1,7 +1,9 @@
 import 'package:abelliz_essentials/abelliz_essentials.dart';
 import 'package:abelliz_essentials/widgets/text/section_title.widget.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'dart:html' as html;
 
 void main() {
   runApp(
@@ -174,27 +176,21 @@ class _AppState extends State<App> {
                       groupValue: selectedRadioOption,
                       selectedValue: (value) => selectRadioOption(value),
                       value: radioOptions[0],
-                      backgroundColor: selectedRadioOption == radioOptions[0]
-                          ? AppColors.BLUE
-                          : null,
+                      backgroundColor: selectedRadioOption == radioOptions[0] ? AppColors.BLUE : null,
                     ),
                     RadioButtonAbelliz(
                       title: radioOptions[1],
                       groupValue: selectedRadioOption,
                       selectedValue: (value) => selectRadioOption(value),
                       value: radioOptions[1],
-                      backgroundColor: selectedRadioOption == radioOptions[1]
-                          ? AppColors.BLUE
-                          : null,
+                      backgroundColor: selectedRadioOption == radioOptions[1] ? AppColors.BLUE : null,
                     ),
                     RadioButtonAbelliz(
                       title: radioOptions[2],
                       groupValue: selectedRadioOption,
                       selectedValue: (value) => selectRadioOption(value),
                       value: radioOptions[2],
-                      backgroundColor: selectedRadioOption == radioOptions[2]
-                          ? AppColors.BLUE
-                          : null,
+                      backgroundColor: selectedRadioOption == radioOptions[2] ? AppColors.BLUE : null,
                     ),
                   ],
                 ),
@@ -206,8 +202,7 @@ class _AppState extends State<App> {
                     ),
                     Builder(builder: (context) {
                       return CloseButtonAbelliz(
-                        action: () =>
-                            ScaffoldMessenger.of(context).showSnackBar(
+                        action: () => ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
                             content: Text('Close button pressed'),
                           ),
@@ -264,91 +259,85 @@ class _AppState extends State<App> {
                       width: 60,
                       height: 60,
                       color: AppColors.GREEN,
-                      child: Center(
-                          child: Text('GREEN',
-                              style: TextStyle(color: Colors.white))),
+                      child: Center(child: Text('GREEN', style: TextStyle(color: Colors.white))),
                     ),
                     Container(
                       width: 60,
                       height: 60,
                       color: AppColors.RED,
-                      child: Center(
-                          child: Text('RED',
-                              style: TextStyle(color: Colors.white))),
+                      child: Center(child: Text('RED', style: TextStyle(color: Colors.white))),
                     ),
                     Container(
                       width: 60,
                       height: 60,
                       color: AppColors.CREAM,
-                      child: Center(
-                          child: Text('CREAM',
-                              style: TextStyle(color: Colors.black))),
+                      child: Center(child: Text('CREAM', style: TextStyle(color: Colors.black))),
                     ),
                     Container(
                       width: 60,
                       height: 60,
                       color: AppColors.DARK,
-                      child: Center(
-                          child: Text('DARK',
-                              style: TextStyle(color: Colors.white))),
+                      child: Center(child: Text('DARK', style: TextStyle(color: Colors.white))),
                     ),
                     Container(
                       width: 60,
                       height: 60,
                       color: AppColors.DARK_LIGHT,
-                      child: Center(
-                          child: Text('DARK LIGHT',
-                              style: TextStyle(color: Colors.white))),
+                      child: Center(child: Text('DARK LIGHT', style: TextStyle(color: Colors.white))),
                     ),
                     Container(
                       width: 60,
                       height: 60,
                       color: AppColors.GRAY,
-                      child: Center(
-                          child: Text('GRAY',
-                              style: TextStyle(color: Colors.black))),
+                      child: Center(child: Text('GRAY', style: TextStyle(color: Colors.black))),
                     ),
                     Container(
                       width: 60,
                       height: 60,
                       color: AppColors.GRAY_LIGHT,
-                      child: Center(
-                          child: Text('GRAY LIGHT',
-                              style: TextStyle(color: Colors.black))),
+                      child: Center(child: Text('GRAY LIGHT', style: TextStyle(color: Colors.black))),
                     ),
                     Container(
                       width: 60,
                       height: 60,
                       color: AppColors.BLUE,
-                      child: Center(
-                          child: Text('BLUE',
-                              style: TextStyle(color: Colors.white))),
+                      child: Center(child: Text('BLUE', style: TextStyle(color: Colors.white))),
                     ),
                     Container(
                       width: 60,
                       height: 60,
                       color: AppColors.BLUE_LIGHT,
-                      child: Center(
-                          child: Text('BLUE LIGHT',
-                              style: TextStyle(color: Colors.white))),
+                      child: Center(child: Text('BLUE LIGHT', style: TextStyle(color: Colors.white))),
                     ),
                     Container(
                       width: 60,
                       height: 60,
                       color: AppColors.PINK,
-                      child: Center(
-                          child: Text('PINK',
-                              style: TextStyle(color: Colors.white))),
+                      child: Center(child: Text('PINK', style: TextStyle(color: Colors.white))),
                     ),
                     Container(
                       width: 60,
                       height: 60,
                       color: AppColors.PURPLE,
-                      child: Center(
-                          child: Text('PURPLE',
-                              style: TextStyle(color: Colors.white))),
+                      child: Center(child: Text('PURPLE', style: TextStyle(color: Colors.white))),
                     ),
                   ],
+                ),
+                DashedDividerAbelliz(),
+                SectionTitleAbelliz('Github Repository'),
+                RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: 'github.com/abelliz_essentials',
+                        style: TextStyle(color: Colors.blue),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            html.window.open('https://github.com/andersonbelli/abelliz_essentials', 'new tab');
+                          },
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
