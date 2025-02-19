@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobkit_dashed_border/mobkit_dashed_border.dart';
 
-import '../constants/colors.constants.dart';
 import '../constants/padding.constants.dart';
 
 class DashedDividerAbelliz extends StatelessWidget {
@@ -14,7 +13,7 @@ class DashedDividerAbelliz extends StatelessWidget {
     ),
     this.dashLength = 10,
     this.borderWidth = 1,
-    this.borderColor = AppColors.DARK_LIGHT,
+    this.borderColor,
     this.child = const SizedBox.shrink(),
   });
 
@@ -22,8 +21,8 @@ class DashedDividerAbelliz extends StatelessWidget {
   final double height;
   final EdgeInsets margin;
   final double dashLength;
-  final Color borderColor;
   final double borderWidth;
+  final Color? borderColor;
   final Widget child;
 
   @override
@@ -36,7 +35,8 @@ class DashedDividerAbelliz extends StatelessWidget {
         border: DashedBorder.fromBorderSide(
           dashLength: dashLength,
           side: BorderSide(
-            color: borderColor.withValues(alpha: .3),
+            color: borderColor?.withValues(alpha: .3) ??
+                Theme.of(context).colorScheme.inversePrimary.withValues(alpha: .3),
             width: borderWidth,
           ),
         ),

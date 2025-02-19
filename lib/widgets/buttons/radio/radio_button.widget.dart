@@ -55,11 +55,18 @@ class RadioButtonAbelliz<T> extends StatelessWidget {
               margin: margin,
               child: DashedDividerAbelliz(
                 dashLength: 6,
+                borderColor: backgroundColor != null
+                    ? Theme.of(context).colorScheme.primary
+                    : Theme.of(context).colorScheme.inversePrimary,
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(2),
-                    color: (backgroundColor ?? AppColors.CREAM)
-                        .withValues(alpha: .3),
+                    color: backgroundColor?.withValues(
+                          alpha: .3,
+                        ) ??
+                        Theme.of(context).colorScheme.tertiary.withValues(
+                              alpha: .1,
+                            ),
                   ),
                   padding: padding,
                   child: Text(

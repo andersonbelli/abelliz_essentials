@@ -17,7 +17,13 @@ void showMessageDialogAbelliz(
           <Widget>[
             TextButton(
               onPressed: buttonAction ?? () => Navigator.of(ctx).pop(),
-              child: buttonTextWidget ?? const Text('OK'),
+              child: buttonTextWidget ??
+                  Text(
+                    'OK',
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.tertiary,
+                    ),
+                  ),
             ),
           ],
     ),
