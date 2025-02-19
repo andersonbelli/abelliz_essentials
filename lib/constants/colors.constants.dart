@@ -35,4 +35,38 @@ abstract class AppColors {
   static const PURPLE = Color.fromRGBO(101, 44, 179, 1.0);
   static const BLUE_LIGHT = Color.fromRGBO(45, 155, 240, 1.0);
   static const GRAY_LIGHT = Color.fromRGBO(206, 206, 206, 1.0);
+  static const ORANGE = Color.fromRGBO(210, 100, 15, 1.0);
+
+  static final lightTheme = ThemeData(
+    primarySwatch: mainColor,
+    colorScheme: const ColorScheme(
+      primary: mainColor,
+      secondary: PINK,
+      onPrimary: DARK,
+      onSecondary: PURPLE,
+      onError: Colors.red,
+      error: RED,
+      brightness: Brightness.light,
+      surface: CREAM,
+      onSurface: DARK_LIGHT,
+    ),
+    appBarTheme: const AppBarTheme(
+      backgroundColor: CREAM,
+      centerTitle: true,
+    ),
+    scaffoldBackgroundColor: CREAM,
+    fontFamily: 'Open Sans',
+  );
+  static final darkModeTheme = ThemeData.dark().copyWith(
+    brightness: Brightness.dark,
+    colorScheme: const ColorScheme.dark(
+      primary: mainColor,
+      secondary: ORANGE,
+      tertiary: PINK,
+      onPrimary: CREAM,
+    ),
+    appBarTheme: const AppBarTheme(
+      centerTitle: true,
+    ),
+  );
 }
