@@ -10,8 +10,7 @@ class DefaultScaffoldAbelliz extends StatelessWidget {
     this.customAppBar,
     this.isTransparent = true,
   }) : assert(
-          (appBarText != null && customAppBar == null) ||
-              (appBarText == null && customAppBar != null),
+          (appBarText != null && customAppBar == null) || (appBarText == null && customAppBar != null),
           'Either [appBarText] or [customAppBar] must be provided.',
         );
 
