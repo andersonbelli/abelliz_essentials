@@ -9,6 +9,7 @@ export 'dialogs/message_dialog.widget.dart';
 export 'dialogs/show_app_modal.dart';
 export 'error_messages_container.widget.dart';
 export 'loading.widget.dart';
+export 'text/section_title.widget.dart';
 export 'text/text_field_with_title.widget.dart';
 export 'text/text_shadow.widget.dart';
 export 'text/text_underline.widget.dart';
