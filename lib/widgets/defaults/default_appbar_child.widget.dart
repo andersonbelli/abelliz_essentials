@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants/padding.constants.dart';
+import '../../constants/padding.constants.dart';
 
 class DefaultAppBarTitleAbelliz extends StatelessWidget {
   const DefaultAppBarTitleAbelliz(
