@@ -2,6 +2,7 @@ export 'buttons/action_button.widget.dart';
 export 'buttons/close_button.dart';
 export 'buttons/radio/radio_button.widget.dart';
 export 'buttons/radio/radio_group.widget.dart';
+export 'card_with_vertical_title.widget.dart';
 export 'dashed_border.widget.dart';
 export 'defaults/default_appbar_child.widget.dart';
 export 'defaults/default_scaffold.widget.dart';
