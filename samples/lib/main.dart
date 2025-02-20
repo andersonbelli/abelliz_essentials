@@ -3,6 +3,7 @@ import 'package:abelliz_essentials/widgets/text/section_title.widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:samples/dev.dart';
 import 'dart:html' as html;
 
 import 'package:samples/theme.controller.dart';
@@ -27,6 +28,17 @@ void main() {
         theme: AppColors.lightTheme,
         darkTheme: AppColors.darkModeTheme,
         themeMode: themeController.themeMode,
+        onGenerateRoute: (RouteSettings routeSettings) => MaterialPageRoute<void>(
+          settings: routeSettings,
+          builder: (BuildContext context) {
+            switch (routeSettings.name) {
+              case Dev.route:
+                return Dev();
+              default:
+                return App();
+            }
+          },
+        ),
         home: const App(),
       ),
     ),
