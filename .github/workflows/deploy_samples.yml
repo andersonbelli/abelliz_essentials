@@ -8,6 +8,7 @@ on:
 
 jobs:
   build:
+    if: false # Disabling this script. Keeping it just for future references.
     runs-on: ubuntu-latest
 
     steps:

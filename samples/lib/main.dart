@@ -1,14 +1,16 @@
 import 'package:abelliz_essentials/abelliz_essentials.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:samples/widgets/dialogs_show_case.widget.dart';
-import 'package:samples/widgets/github.widget.dart';
-import 'package:samples/widgets/radio_group_show_case.widget.dart';
-import 'package:samples/widgets/texts_show_case.widget.dart';
-
-import 'widgets/colors_show_case.widget.dart';
+import 'package:samples/dev.dart';
+import 'dart:html' as html;
 
 import 'package:samples/theme.controller.dart';
+
+import 'widgets/colors_show_case.widget.dart';
+import 'widgets/dialogs_show_case.widget.dart';
+import 'widgets/github.widget.dart';
+import 'widgets/radio_group_show_case.widget.dart';
+import 'widgets/texts_show_case.widget.dart';
 
 final themeController = ThemeController();
 
@@ -28,6 +30,17 @@ void main() {
         theme: AppColors.lightTheme,
         darkTheme: AppColors.darkModeTheme,
         themeMode: themeController.themeMode,
+        onGenerateRoute: (RouteSettings routeSettings) => MaterialPageRoute<void>(
+          settings: routeSettings,
+          builder: (BuildContext context) {
+            switch (routeSettings.name) {
+              case Dev.route:
+                return Dev();
+              default:
+                return App();
+            }
+          },
+        ),
         home: const App(),
       ),
     ),
