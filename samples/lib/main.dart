@@ -1,14 +1,16 @@
 import 'package:abelliz_essentials/abelliz_essentials.dart';
-import 'package:abelliz_essentials/widgets/text/section_title.widget.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:samples/dev.dart';
 import 'dart:html' as html;
 
 import 'package:samples/theme.controller.dart';
 
-import 'widgets/color_box.widget.dart';
+import 'widgets/colors_show_case.widget.dart';
+import 'widgets/dialogs_show_case.widget.dart';
+import 'widgets/github.widget.dart';
+import 'widgets/radio_group_show_case.widget.dart';
+import 'widgets/texts_show_case.widget.dart';
 
 final themeController = ThemeController();
 
@@ -56,7 +58,7 @@ class _AppState extends State<App> {
   /// Radio settings
   List<String> radioOptions = ['option 1', 'option 2', 'option 3'];
   String selectedRadioOption = 'option 1';
-  selectRadioOption(String? value) => setState(() {
+  void selectRadioOption(String? value) => setState(() {
         if (value != null) selectedRadioOption = value;
       });
 
@@ -68,58 +70,6 @@ class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
-    final ErrorMessagesMap<int> errorMessagesMap = {
-      0: 'Error message 1',
-      1: 'Error message 2',
-    };
-
-    final List<ColorBox> appColors = [
-      ColorBox(
-        color: AppColors.GREEN,
-        text: 'GREEN',
-      ),
-      ColorBox(
-        color: AppColors.RED,
-        text: 'RED',
-      ),
-      ColorBox(
-        color: AppColors.CREAM,
-        text: 'CREAM',
-      ),
-      ColorBox(
-        color: AppColors.DARK,
-        text: 'DARK',
-      ),
-      ColorBox(
-        color: AppColors.DARK_LIGHT,
-        text: 'DARK LIGHT',
-      ),
-      ColorBox(
-        color: AppColors.GRAY,
-        text: 'GRAY',
-      ),
-      ColorBox(
-        color: AppColors.GRAY_LIGHT,
-        text: 'GRAY LIGHT',
-      ),
-      ColorBox(
-        color: AppColors.BLUE,
-        text: 'BLUE',
-      ),
-      ColorBox(
-        color: AppColors.BLUE_LIGHT,
-        text: 'BLUE LIGHT',
-      ),
-      ColorBox(
-        color: AppColors.PINK,
-        text: 'PINK',
-      ),
-      ColorBox(
-        color: AppColors.PURPLE,
-        text: 'PURPLE',
-      ),
-    ];
-
     return DefaultScaffoldAbelliz(
       customAppBar: AppBar(
         forceMaterialTransparency: true,
@@ -144,109 +94,13 @@ class _AppState extends State<App> {
           padding: const EdgeInsets.all(AppPadding.kSize24),
           child: Column(
             children: [
-              TextUnderlineAbelliz(
-                'Text with underline',
+              TextsShowCase(),
+              DialogsShowCase(),
+              RadioGroupShowCase(
+                radioOptions: radioOptions,
+                selectedRadioOption: selectedRadioOption,
+                selectRadioOption: selectRadioOption,
               ),
-              DashedDividerAbelliz(),
-              TextShadowAbelliz(
-                'Text with shadow (default size)',
-                color: Theme.of(context).colorScheme.primary,
-              ),
-              DashedDividerAbelliz(),
-              Column(
-                children: [
-                  TextShadowAbelliz(
-                    'Text kSmall',
-                    fontSize: AppTextSize.kSmall,
-                    color: Theme.of(context).colorScheme.tertiary,
-                  ),
-                  TextShadowAbelliz(
-                    'Text kMedium',
-                    fontSize: AppTextSize.kMedium,
-                    color: Theme.of(context).colorScheme.tertiary,
-                  ),
-                  TextShadowAbelliz(
-                    'Text kLarge',
-                    fontSize: AppTextSize.kLarge,
-                    color: Theme.of(context).colorScheme.tertiary,
-                  ),
-                  TextShadowAbelliz(
-                    'Text kExtraLarge',
-                    fontSize: AppTextSize.kExtraLarge,
-                    color: Theme.of(context).colorScheme.tertiary,
-                  ),
-                ],
-              ),
-              DashedDividerAbelliz(),
-              TextFieldWithTitleAbelliz(
-                titleText: 'TextFieldWithTitleAbelliz',
-                hintText: 'TextFieldWithTitleAbelliz',
-                controller: TextEditingController(),
-              ),
-              DashedDividerAbelliz(),
-              SectionTitleAbelliz(
-                'Dialog',
-              ),
-              ActionButtonAbelliz(
-                text: 'Click to open Dialog',
-                onPressed: () => showMessageDialogAbelliz(
-                  context,
-                  title: Text('showMessageDialogAbelliz'),
-                  'This is a dialog opened from the Action button :)',
-                ),
-              ),
-              SectionTitleAbelliz(
-                'Modal',
-              ),
-              ActionButtonAbelliz(
-                text: 'Click to open Modal',
-                onPressed: () async => await showAppModalAbelliz(
-                  context,
-                  title: TextShadowAbelliz(
-                    'showAppModalAbelliz',
-                    fontSize: AppTextSize.kMedium,
-                    color: AppColors.PINK,
-                  ),
-                  child: SizedBox.expand(
-                    child: Column(
-                      children: [
-                        Text(
-                          'asd',
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              DashedDividerAbelliz(),
-              RadioGroupAbelliz<String>(
-                titleText: 'Radio group',
-                listOfRadioButtons: [
-                  RadioButtonAbelliz(
-                    title: radioOptions[0],
-                    groupValue: selectedRadioOption,
-                    selectedValue: (value) => selectRadioOption(value),
-                    value: radioOptions[0],
-                    backgroundColor: selectedRadioOption == radioOptions[0] ? AppColors.BLUE : null,
-                  ),
-                  RadioButtonAbelliz(
-                    title: radioOptions[1],
-                    groupValue: selectedRadioOption,
-                    selectedValue: (value) => selectRadioOption(value),
-                    value: radioOptions[1],
-                    backgroundColor: selectedRadioOption == radioOptions[1] ? AppColors.BLUE : null,
-                  ),
-                  RadioButtonAbelliz(
-                    title: radioOptions[2],
-                    groupValue: selectedRadioOption,
-                    selectedValue: (value) => selectRadioOption(value),
-                    value: radioOptions[2],
-                    backgroundColor: selectedRadioOption == radioOptions[2] ? AppColors.BLUE : null,
-                  ),
-                ],
-              ),
-              DashedDividerAbelliz(),
               Row(
                 children: [
                   SectionTitleAbelliz(
@@ -278,26 +132,6 @@ class _AppState extends State<App> {
                 ],
               ),
               DashedDividerAbelliz(),
-              SizedBox(
-                width: double.infinity,
-                child: SectionTitleAbelliz(
-                  '''ErrorMessagesContainer --> passing a map of Strings''',
-                  color: Theme.of(context).colorScheme.inverseSurface,
-                ),
-              ),
-              TextShadowAbelliz(
-                '''ErrorMessagesMap<int> errorMessagesMap = {
-                  1: 'Error message 1',
-                  2: 'Error message 2',
-                  }''',
-                fontSize: AppTextSize.kMedium,
-                textAlign: TextAlign.start,
-                color: Theme.of(context).colorScheme.onPrimary,
-              ),
-              ErrorMessagesContainerAbelliz(
-                isVisible: true,
-                errorMessagesList: errorMessagesMap,
-              ),
               DashedDividerAbelliz(),
               SizedBox(
                 width: double.infinity,
@@ -337,21 +171,7 @@ class _AppState extends State<App> {
                 ),
               ),
               DashedDividerAbelliz(),
-              SectionTitleAbelliz('Github Repository'),
-              RichText(
-                text: TextSpan(
-                  children: [
-                    TextSpan(
-                      text: 'github.com/abelliz_essentials',
-                      style: TextStyle(color: Colors.blue),
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = () {
-                          html.window.open('https://github.com/andersonbelli/abelliz_essentials', 'new tab');
-                        },
-                    ),
-                  ],
-                ),
-              ),
+              GitHub()
             ],
           ),
         ),

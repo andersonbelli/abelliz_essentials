@@ -1,6 +1,6 @@
 name: abelliz_essentials
 description: "A collection of reusable Flutter components, utilities, and interfaces to accelerate development across projects."
-version: 0.0.1
+version: 0.1.2
 homepage:
 
 environment:
